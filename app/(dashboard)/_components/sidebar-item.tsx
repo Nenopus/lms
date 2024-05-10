@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -23,12 +23,11 @@ export const SidebarItem = (
   const pathname= usePathname();
   const router= useRouter();
   const isActive =
-  (pathname =="/" && href=== "/" )
-  pathname ===href ||
-  pathname?.startsWith(`${href}/`);
+    (pathname === "/" && href === "/") ||
+    pathname === href ||
+    pathname?.startsWith(`${href}/`);
 
-  const onClick=() =>
-    {
+  const onClick= () => {
       router.push(href);
     }
   return ( 
