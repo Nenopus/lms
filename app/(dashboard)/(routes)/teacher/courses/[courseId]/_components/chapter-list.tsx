@@ -9,9 +9,9 @@ import {
   DropResult,
 } from "@hello-pangea/dnd";
 import { cn } from "@/lib/utils";
-import { Badge, Grip, Pencil } from "lucide-react";
+import { Grip, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import { Badge } from "@/components/ui/badge";
 interface ChaptersListProps {
   items: Chapter[];
   onReorder: (updateData: { id: string; position: number }[]) => void;
@@ -94,19 +94,18 @@ export const ChaptersList = ({
                     {chapter.title}
                     <div className="ml-auto pr-2 flex items-center gap-x-2">
                       {chapter.isFree && <Badge>Free</Badge>}
-                      <Button
-                        variant="ghost"
-                        size="sm"
+                      <Badge
+                      
                         className={cn(
-                          "bg-slate-500 text-white rounded-2xl",
+                          "bg-slate-500",
                           chapter.isPublished && "bg-sky-700"
                         )}
                       >
                         {chapter.isPublished ? "Published" : "Draft"}
-                      </Button>
+                      </Badge>
                       <Pencil
                         onClick={() => onEdit(chapter.id)}
-                        className="w-4 h-4 cursor-pointer hover:opacity-75 transition"
+                        className="w-5 h-5 cursor-pointer hover:opacity-75 transition"
                       />
                     </div>
                   </div>
