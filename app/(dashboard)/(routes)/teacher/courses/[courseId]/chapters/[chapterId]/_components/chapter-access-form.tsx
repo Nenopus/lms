@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 interface ChapterAccessFormProps {
   initialData: Chapter;
   courseId: string;

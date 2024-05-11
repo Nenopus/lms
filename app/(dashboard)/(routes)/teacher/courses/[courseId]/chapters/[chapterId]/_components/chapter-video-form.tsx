@@ -3,7 +3,7 @@ import * as z from "zod";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Pencil, PlusCircle, Video } from "lucide-react";
 import { Chapter, MuxData } from "@prisma/client";

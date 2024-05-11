@@ -6,7 +6,7 @@ import axios from "axios";
 import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 
 interface ChapterActionsProps {
   disabled: boolean;
@@ -24,7 +24,7 @@ export const ChapterActions = ({
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const onPublish = async () => {
+  const onClick = async () => {
     try {
       setIsLoading(true);
 
@@ -63,7 +63,7 @@ export const ChapterActions = ({
   return (
     <div className="flex items-center gap-x-2">
       <Button
-        onClick={onPublish}
+        onClick={onClick}
         disabled={disabled || isLoading}
         variant="outline"
         size="sm"
