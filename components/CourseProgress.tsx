@@ -10,7 +10,7 @@ interface CourseProgressProps {
 }
 const colorByVariant = {
   default: "bg-sky-700",
-  success: "bg-emerald-500",
+  success: "bg-emerald-700",
 };
 
 const sizeByVariant = {

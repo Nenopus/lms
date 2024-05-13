@@ -9,7 +9,7 @@ const bannerVariants = cva(
     variants: {
       variant: {
         warning: "bg-yellow-200/80 border-yellow-30 text-primary",
-        success: "bg-green-200/80 border-emerald-800 text-secondary",
+        success: "bg-emerald-700 border-emerald-800 text-secondary",
       },
     },
     defaultVariants: {
@@ -31,7 +31,7 @@ export const Banner = ({ label, variant }: BannerProps) => {
   const Icon = iconMap[variant || "warning"];
   return (
     <div className={cn(bannerVariants({ variant }))}>
-      <Icon className="h-2 w-2 mr-2" />
+      <Icon className="h-4 w-4 mr-2" />
       {label}
     </div>
   );
