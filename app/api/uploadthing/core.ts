@@ -20,6 +20,12 @@ export const ourFileRouter = {
  chapterVideo: f({video:{ maxFileCount:1 , maxFileSize:"512GB"}})
  .middleware(() => handleAuth())
  .onUploadComplete(() => {}),
+ bannerImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
+    .middleware(() => handleAuth())
+    .onUploadComplete(() => {}),
+  cv: f({ pdf: { maxFileSize: "16MB", maxFileCount: 1 } })
+    .middleware(() => handleAuth())
+    .onUploadComplete(() => {}),
 
 } satisfies FileRouter;
  
