@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { Attachment, Chapter } from "@prisma/client";
+
 interface GetChapterProps {
   userId: string;
   chapterId: string;
@@ -28,6 +29,7 @@ export const getChapter = async ({
       },
       select: {
         price: true,
+        userId: true, // Ensure userId is selected
       },
     });
 
@@ -98,7 +100,7 @@ export const getChapter = async ({
       chapter: null,
       course: null,
       muxData: null,
-      attachment: null,
+      attachments: [],
       nextChapter: null,
       userProgress: null,
       purchase: null,

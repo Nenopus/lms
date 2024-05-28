@@ -76,7 +76,10 @@ const Profile = async ({ params }: ProfileProps) => {
         />
         <h1 className="text-2xl font-semibold">{fullName}</h1>
         <p className="text-gray-600">{email}</p>
+        <br />
+        <p>Bio :</p>
         {profile?.bio && (
+          
           <p className="text-center mt-4 max-w-2xl">{profile.bio}</p>
         )}
         {profile?.cvUrl && (
