@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.0.7",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@hello-pangea/dnd": "^16.6.0",
     "@hookform/resolvers": "^3.3.4",
+    "@mui/material": "^5.15.18",
     "@mux/mux-node": "^8.5.3",
     "@mux/mux-player-react": "^2.6.0",
     "@next/bundle-analyzer": "^14.2.3",

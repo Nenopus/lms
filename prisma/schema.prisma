@@ -1,4 +1,3 @@
-// prisma/schema.prisma
 datasource db {
   provider     = "postgresql"
   url          = env("DATABASE_URL")
@@ -40,6 +39,7 @@ model Course {
   updatedAt DateTime   @updatedAt
   chapters  Chapter[]
   purchases Purchase[]
+  ratings   Rating[] // New relation
 
   @@index([categoryId])
 }
@@ -132,4 +132,19 @@ model StripeCustomer {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Rating {
+  id        String   @id @default(uuid())
+  userId    String
+  courseId  String
+  rating    Int
+  message   String?  @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([courseId])
 }

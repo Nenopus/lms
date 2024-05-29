@@ -85,6 +85,16 @@ export const getChapter = async ({
       },
     });
 
+    // Check if the user has rated this course
+    const userRating = await db.rating.findUnique({
+      where: {
+        userId_courseId: {
+          userId: userId,
+          courseId: courseId,
+        },
+      },
+    });
+
     return {
       chapter,
       course,
@@ -93,6 +103,7 @@ export const getChapter = async ({
       nextChapter,
       userProgress,
       purchase,
+      hasRated: !!userRating, // Include hasRated in the return value
     };
   } catch (error) {
     console.log("[GET_CHAPTER_ERROR]", error);
@@ -104,6 +115,7 @@ export const getChapter = async ({
       nextChapter: null,
       userProgress: null,
       purchase: null,
+      hasRated: false,
     };
   }
 };

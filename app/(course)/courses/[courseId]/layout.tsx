@@ -46,9 +46,6 @@ const Courselayout = async ({
     return redirect("/");
   }
 
-  // Fetch teacher (user who published the course) details
- 
-
   const progressCount = await getProgress(userId, course.id);
 
   return (
@@ -60,7 +57,6 @@ const Courselayout = async ({
         <CourseSidebar course={course} progressCount={progressCount} />
       </div>
       <main className="md:pl-80 pt-[80px] h-full">
-        
         {children}
       </main>
     </div>

@@ -4,6 +4,7 @@ import { Chapter, Course, UserProgress } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { CourseSideBarItems } from "./course-side-item";
 import { CourseProgress } from "@/components/CourseProgress";
+import { CourseRating } from "./course-rating";
 
 interface CourseSidebarProps {
   course: Course & {
@@ -54,6 +55,7 @@ export const CourseSidebar = async ({
           />
         ))}
       </div>
+      <CourseRating courseId={course.id} />
     </div>
   );
 };
